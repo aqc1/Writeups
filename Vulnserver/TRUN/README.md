@@ -242,6 +242,7 @@ As shown below, we successfully overwritten the EIP and jumped to our EIP locati
 ![](images/breakpoint.png)
 
 -----
+
 ## Generating shellcode
 
 First, let's use msfvenom to generate our shellcode.
