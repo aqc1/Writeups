@@ -15,7 +15,7 @@ s_string_variable(0);
 Now let's use `generic_send_tcp` to try and crash the application.
 
 ```bash
-generic_send_tcp 10.10.86.166 9999 trun.spk 0 0
+generic_send_tcp 10.10.86.166 9999 hter.spk 0 0
 ```
 
 We successfully crashed vulnserver.
