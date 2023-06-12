@@ -22,6 +22,8 @@ We successfully crashed vulnserver.
 
 ![](images/crash.png)
 
+-----
+
 ## Replicating the crash
 
 Now that we know we have a crash, let's try to replicate the crash. To do this, we are going to write a quick fuzz script in Python.
